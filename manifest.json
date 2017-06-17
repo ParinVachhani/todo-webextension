@@ -16,40 +16,50 @@
   // Background scripts can use any of the WebExtension APIs in the script, as long as their extension has the necessary permissions.
   // Background scripts can make XHR requests to any hosts for which they have host permissions.
   "background": {
-    "page": "background-page.html",
-    "scripts": ["background-script.js"]
+    "scripts": ["background.js"]
   },
   // permissions lists permissions the add-on needs. We're just asking for the activeTab permission here. 
-  "permissions": [
-    "activeTab"
-  ],
+  // "permissions": [
+  //   "activeTab"
+  // ],
+  "permissions": ["storage", "tabs"],
   // Content scripts can see and manipulate the page's DOM, just like normal scripts loaded by the page.
   // Unlike normal page scripts, they can:
   // > Make cross-domain XHR requests.
   // > Use a small subset of the WebExtension APIs.
   // > Exchange messages with their background scripts and can in this way indirectly access all the WebExtension APIs.
   // Content scripts cannot directly access normal page scripts but can exchange messages with them using the standard window.postMessage() API.
-  "content_scripts": [
-    {
-      "matches": ["://facebook.com"],
-      "js": ["facebook.js"]
-    },
-    {
-      "matches": ["://twitter.com"],
-      "js": ["twitter.js"]
-    }
-  ],
+  // "content_scripts": [
+  //   {
+  //     "matches": ["://facebook.com"],
+  //     "js": ["facebook.js"]
+  //   },
+  //   {
+  //     "matches": ["://twitter.com"],
+  //     "js": ["twitter.js"]
+  //   }
+  // ],
   // browser_action specifies the toolbar button. We're supplying three pieces of information here:
   // > default_icon is mandatory, and points to the icon for the button
   // > default_title is optional, and will be shown in a tooltip
   // > default_popup is used if you want a popup to be shown when the user clicks the button. We do, so we've included this key and made it point to an HTML file included with the add-on.
   "browser_action": {
     "default_icon": "icons/icon-36x36.png",
-    "default_title": "Do It First",
-    "default_popup": "popup/popup.html"
+    "default_title": "Do It First"
+    // "default_popup": "popup/popup.html"
   },
   // Web accessible resources are resources such as images, HTML, CSS, and JavaScript that you include in the extension and want to make accessible to content scripts and page scripts. Resources which are made web-accessible can be referenced by page scripts and content scripts using a special URI scheme.
   "web_accessible_resources": [
-  ]
-
+  ],
+  // Commands 
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D"
+      }
+    }
+  },
+  "chrome_url_overrides" : {
+    "newtab": "popup/index.html"
+  }
 }
