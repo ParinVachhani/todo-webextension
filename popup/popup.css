@@ -33,7 +33,7 @@ body {
 
 /* form control styling */
 
-input, textarea, button {
+input, button {
   border: 1px solid rgb(218,218,218);
   padding: 4px;
   background: white;
@@ -54,7 +54,7 @@ button:active {
   box-shadow: inset -2px -2px 1px rgba(0,0,0,0.05);
 }
 
-input, textarea {
+input, {
   font-family: sans-serif;
   box-shadow: inset 2px 2px 1px rgba(0,0,0,0.10);
 }
@@ -65,7 +65,7 @@ h2 {
   font-size: 1.3rem;
 }
 
-p, input, textarea {
+p, input {
   font-size: 1.2rem;
   line-height: 1.5;
 }
@@ -81,12 +81,6 @@ p, input, textarea {
 input {
   width: 100%;
   margin-bottom: 2px;
-}
-
-textarea {
-  width: 100%;
-  margin-bottom: 4px;
-  resize: none;
 }
 
 .clear {
