@@ -162,3 +162,11 @@ function clearAll() {
   }
   browser.storage.local.clear();
 }
+
+document.getElementById("text_input")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+        document.getElementById("add_task").click();
+    }
+});
