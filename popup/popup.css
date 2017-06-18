@@ -7,23 +7,21 @@
 html {
   font-family: sans-serif;
   font-size: 10px;
-  background: rgb(240,240,240);
-  height: 300px;
   margin: 0;
 }
 
 body {
-  width: 300px;
-  background: rgb(240,240,240);
-  margin: 0 auto;
-  padding: 2px;
-  height: inherit;
+  /*width: 800px;*/
+  margin: auto;
+  padding: 100px;
+  /*height: inherit;*/
+  align-content : center;
 }
 
 .outer-wrapper {
   overflow: auto;
   width: 100%;
-  height: 290px;
+  /*height: 290px;*/
   background: rgb(240,240,240);
 }
 
@@ -63,6 +61,7 @@ input, {
 
 h2 {
   font-size: 1.3rem;
+  text-align: center;
 }
 
 p, input {
@@ -80,7 +79,7 @@ p, input {
 
 input {
   width: 100%;
-  margin-bottom: 2px;
+  /*margin-bottom: 30px;*/
 }
 
 .clear {
@@ -111,4 +110,12 @@ p {
 
 .update {
   float: right;
+}
+
+.textInput {
+  margin-bottom: 15px;
+}
+
+.taskHH {
+  margin-bottom: 10px;
 }

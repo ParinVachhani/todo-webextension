@@ -22,23 +22,23 @@
   // "permissions": [
   //   "activeTab"
   // ],
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage", "tabs", "activeTab"],
   // Content scripts can see and manipulate the page's DOM, just like normal scripts loaded by the page.
   // Unlike normal page scripts, they can:
   // > Make cross-domain XHR requests.
   // > Use a small subset of the WebExtension APIs.
   // > Exchange messages with their background scripts and can in this way indirectly access all the WebExtension APIs.
   // Content scripts cannot directly access normal page scripts but can exchange messages with them using the standard window.postMessage() API.
-  // "content_scripts": [
-  //   {
-  //     "matches": ["://facebook.com"],
-  //     "js": ["facebook.js"]
-  //   },
-  //   {
-  //     "matches": ["://twitter.com"],
-  //     "js": ["twitter.js"]
-  //   }
-  // ],
+  "content_scripts": [
+    {
+      "matches": ["://www.facebook.com/"],
+      "js": ["facebook.js"]
+    },
+    {
+      "matches": ["https://twitter.com/"],
+      "js": ["twitter.js"]
+    }
+  ],
   // browser_action specifies the toolbar button. We're supplying three pieces of information here:
   // > default_icon is mandatory, and points to the icon for the button
   // > default_title is optional, and will be shown in a tooltip
