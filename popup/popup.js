@@ -63,14 +63,15 @@ function displayTask(title) {
   /* create task display box */
   var task = document.createElement('div');
   var taskDisplay = document.createElement('div');
-  var taskH = document.createElement('h2');
+  var taskH = document.createElement('h3');
   var deleteBtn = document.createElement('button');
   var clearFix = document.createElement('div');
 
-  task.setAttribute('class','task');
+  task.setAttribute('class','task panel panel-default');
+  taskH.setAttribute('class', 'panel-body');
 
   taskH.textContent = title;
-  deleteBtn.setAttribute('class','delete');
+  deleteBtn.setAttribute('class','delete btn btn-danger');
   deleteBtn.textContent = 'Delete task';
   clearFix.setAttribute('class','clearfix');
 
@@ -91,14 +92,15 @@ function displayTask(title) {
   /* create task edit box */
   var taskEdit = document.createElement('div');
   var taskTitleEdit = document.createElement('input');
+  taskTitleEdit.setAttribute('class', 'taskHH');
   var clearFix2 = document.createElement('div');
 
   var updateBtn = document.createElement('button');
   var cancelBtn = document.createElement('button');
 
-  updateBtn.setAttribute('class','update');
+  updateBtn.setAttribute('class','update btn btn-success');
   updateBtn.textContent = 'Update task';
-  cancelBtn.setAttribute('class','cancel');
+  cancelBtn.setAttribute('class','cancel btn btn-warning');
   cancelBtn.textContent = 'Cancel update';
 
   taskEdit.appendChild(taskTitleEdit);
