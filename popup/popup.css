@@ -119,3 +119,7 @@ p {
 .taskHH {
   margin-bottom: 10px;
 }
+
+.panel-heading {
+  margin: 0;
+}
